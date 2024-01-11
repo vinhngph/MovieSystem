@@ -13,6 +13,32 @@ public class UserDAO {
     private PreparedStatement stm = null;
     private ResultSet rs = null;
 
+    public String getNameByUsername(String username) {
+        String sql = """
+                     SELECT name
+                     FROM (
+                         SELECT username, name FROM Staffs
+                         UNION ALL
+                         SELECT username, name FROM Customers
+                         UNION ALL
+                         SELECT username, name FROM Admin
+                     ) AS CombinedData
+                     WHERE username =?""";
+        try {
+            conn = DBConnect.getConnection();
+            stm = conn.prepareStatement(sql);
+            stm.setString(1, username);
+            rs = stm.executeQuery();
+            if (rs.next()) {
+                String name = rs.getString("name");
+                return name;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
     public UserDTO getUserByUsername(String username_raw) {
         String sql = "SELECT * FROM Users WHERE username=?";
         try {
@@ -72,6 +98,19 @@ public class UserDAO {
             stm.setString(1, username);
             stm.setString(2, password);
 
+            stm.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void removeUser(String username) {
+        String sql = "DELETE FROM Users WHERE username=?";
+
+        try {
+            conn = DBConnect.getConnection();
+            stm = conn.prepareStatement(sql);
+            stm.setString(1, username);
             stm.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);

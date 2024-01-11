@@ -29,8 +29,10 @@ public class Login extends HttpServlet {
 
             UserDAO dao = new UserDAO();
             UserDTO user = dao.checkLogin(username, password);
+            String name = dao.getNameByUsername(username);
             if (user != null) {
                 session.setAttribute("USER", user);
+                session.setAttribute("NAME", name);
 
                 String dbUsername = user.getUsername();
                 RoleDAO roleDAO = new RoleDAO();
@@ -40,7 +42,7 @@ public class Login extends HttpServlet {
                     case 1 ->
                         response.sendRedirect("admin");
                     case 2 ->
-                        response.sendRedirect("staff");
+                        response.sendRedirect("/staff/home");
                     case 3 ->
                         response.sendRedirect("/customer/home");
                     default -> {

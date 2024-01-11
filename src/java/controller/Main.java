@@ -26,7 +26,7 @@ public class Main extends HttpServlet {
                 case 1 ->
                     response.sendRedirect("admin");
                 case 2 ->
-                    response.sendRedirect("staff");
+                    response.sendRedirect("/staff/home");
                 case 3 ->
                     response.sendRedirect("/customer/home");
                 default ->

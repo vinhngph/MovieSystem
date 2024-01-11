@@ -1,24 +1,30 @@
 package controller;
 
 import daos.StaffDAO;
-import dtos.StaffDTO;
+import daos.UserDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 
-public class Admin extends HttpServlet {
+public class RemoveStaff extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        StaffDAO dao = new StaffDAO();
-        List<StaffDTO> list = dao.getAll();
-        request.setAttribute("STAFFS", list);
-        request.getRequestDispatcher("admin.jsp").forward(request, response);
+        String username = request.getParameter("username");
+        try {
+            UserDAO userDAO = new UserDAO();
+            StaffDAO staffDAO = new StaffDAO();
+
+            staffDAO.removeStaff(username);
+            userDAO.removeUser(username);
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            response.sendRedirect("../admin");
+        }
     }
 
     @Override
