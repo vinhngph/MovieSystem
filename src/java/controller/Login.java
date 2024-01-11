@@ -50,6 +50,9 @@ public class Login extends HttpServlet {
                         response.sendRedirect("login");
                     }
                 }
+            } else {
+                session.setAttribute("InvalidUser", "Invalid username or password");
+                response.sendRedirect("Main");
             }
         } catch (IOException e) {
             System.out.println(e);

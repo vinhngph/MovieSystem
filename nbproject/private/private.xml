@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/projects/MovieSystem/src/java/daos/ActorDAO.java</file>
+            <file>file:/D:/projects/MovieSystem/src/java/daos/StaffDAO.java</file>
+            <file>file:/D:/projects/MovieSystem/web/staff/addMovie.jsp</file>
+            <file>file:/D:/projects/MovieSystem/web/staff/home.jsp</file>
+            <file>file:/D:/projects/MovieSystem/src/java/controller/AddMovie.java</file>
+        </group>
     </open-files>
 </project-private>

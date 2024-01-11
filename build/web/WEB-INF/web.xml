@@ -40,6 +40,22 @@
         <servlet-name>StaffHome</servlet-name>
         <servlet-class>controller.StaffHome</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddMovie</servlet-name>
+        <servlet-class>controller.AddMovie</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddActor</servlet-name>
+        <servlet-class>controller.AddActor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveActor</servlet-name>
+        <servlet-class>controller.RemoveActor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveMovie</servlet-name>
+        <servlet-class>controller.RemoveMovie</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/Main</url-pattern>
@@ -79,5 +95,21 @@
     <servlet-mapping>
         <servlet-name>StaffHome</servlet-name>
         <url-pattern>/staff/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddMovie</servlet-name>
+        <url-pattern>/staff/add_movie</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddActor</servlet-name>
+        <url-pattern>/staff/add_actor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveActor</servlet-name>
+        <url-pattern>/staff/remove_actor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveMovie</servlet-name>
+        <url-pattern>/staff/remove_movie</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -1,6 +1,6 @@
 package daos;
 
-import dtos.MovieDTO;
+import dtos.ListMoviesDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,8 +15,8 @@ public class MovieDAO {
     private PreparedStatement stm = null;
     private ResultSet rs = null;
 
-    public List<MovieDTO> getAll() {
-        List<MovieDTO> list = new ArrayList<>();
+    public List<ListMoviesDTO> getAll() {
+        List<ListMoviesDTO> list = new ArrayList<>();
         String sql = "SELECT \n"
                 + "    Movies.id AS movie_id,\n"
                 + "    Movies.title AS movie_title,\n"
@@ -52,7 +52,7 @@ public class MovieDAO {
                     }
                 }
 
-                MovieDTO movie = new MovieDTO(id, title, director, category, age_require, actorNames);
+                ListMoviesDTO movie = new ListMoviesDTO(id, title, director, category, age_require, actorNames);
                 list.add(movie);
             }
             return list;
@@ -60,5 +60,26 @@ public class MovieDAO {
             System.out.println(e);
         }
         return null;
+    }
+
+    public void removeMovie(int movie_id) {
+        String sql1 = "DELETE FROM MovieActor WHERE movie_id=?";
+        String sql2 = "DELETE FROM Movies WHERE id=?";
+
+        try {
+            conn = DBConnect.getConnection();
+            stm = conn.prepareStatement(sql1);
+            stm.setInt(1, movie_id);
+            stm.executeUpdate();
+            DBConnect.closeConnection(conn, stm, rs);
+
+            conn = DBConnect.getConnection();
+            stm = conn.prepareStatement(sql2);
+            stm.setInt(1, movie_id);
+            stm.executeUpdate();
+            DBConnect.closeConnection(conn, stm, rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 }
