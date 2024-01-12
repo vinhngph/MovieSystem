@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2>Add Movie</h2>
-        <form action="/staff/add_movie" method="get">
+        <form action="/staff/add_movie" method="post">
             <label>Title:</label>
             <input type="text" name="title" required><br>
 

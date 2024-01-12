@@ -14,13 +14,14 @@ INSERT INTO Actors (name) VALUES ('Actor D');
 select * from Actors;
 
 INSERT INTO MovieActor (movie_id, actor_id) VALUES
-(101,204),
-(101,205),
-(102,204);
+(101,200),
+(101,201),
+(102,202);
 SELECT * FROM MovieActor WHERE actor_id=300;
 
-DELETE FROM MovieActor WHERE movie_id = 100;
-DELETE FROM Movies WHERE id = 100;
+
+DELETE FROM MovieActor WHERE movie_id = 101;
+DELETE FROM Movies WHERE id = 101;
 
 DELETE FROM Actors WHERE id=201;
 DELETE FROM MovieActor WHERE actor_id=201;

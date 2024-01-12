@@ -1,6 +1,7 @@
 package daos;
 
 import dtos.ListMoviesDTO;
+import dtos.MovieDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -81,5 +82,36 @@ public class MovieDAO {
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    public int addMovie(String title, String director, String category, int age_require) {
+        String sql = "INSERT INTO Movies (title, director, category, age_require) VALUES (?,?,?,?)";
+
+        try {
+            conn = DBConnect.getConnection();
+            stm = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
+            stm.setString(1, title);
+            stm.setString(2, director);
+            stm.setString(3, category);
+            stm.setInt(4, age_require);
+
+            int rowsAffected = stm.executeUpdate();
+
+            if (rowsAffected == 0) {
+                throw new SQLException("Creating movie failed, no rows affected.");
+            }
+
+            try (ResultSet generatedKeys = stm.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    return generatedKeys.getInt(1); // Return the generated ID
+                } else {
+                    throw new SQLException("Creating movie failed, no ID obtained.");
+                }
+            }
+
+        } catch (SQLException e) {
+        }
+        return -1;
     }
 }
