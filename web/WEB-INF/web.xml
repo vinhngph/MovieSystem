@@ -9,10 +9,6 @@
         <servlet-class>controller.Login</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Admin</servlet-name>
-        <servlet-class>controller.Admin</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>Logout</servlet-name>
         <servlet-class>controller.Logout</servlet-class>
     </servlet>
@@ -76,6 +72,14 @@
         <servlet-name>Billing</servlet-name>
         <servlet-class>controller.Billing</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CustomerHistory</servlet-name>
+        <servlet-class>controller.CustomerHistory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminHome</servlet-name>
+        <servlet-class>controller.AdminHome</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/Main</url-pattern>
@@ -83,10 +87,6 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Admin</servlet-name>
-        <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
@@ -151,5 +151,13 @@
     <servlet-mapping>
         <servlet-name>Billing</servlet-name>
         <url-pattern>/customer/billing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerHistory</servlet-name>
+        <url-pattern>/customer/history</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminHome</servlet-name>
+        <url-pattern>/admin/home</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -13,7 +13,6 @@
         </form>
         <br>
 
-
         <h2>List of actors</h2>
         <% String error = (String)session.getAttribute("InMovie");
             if (error != null && !error.isEmpty()) {
@@ -43,6 +42,29 @@
             </c:forEach>
         </table>
 
+        <h2>List of cinemas</h2>
+        <form action="/staff/add_cinema">
+            <button type="submit">Add cinema</button>
+        </form>
+        <table border="1px">
+            <tr>
+                <th>Cinema ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+            <c:forEach var="cinema" items="${requestScope.CINEMAS}">
+                <tr>
+                    <td>${cinema.id}</td>
+                    <td>${cinema.name}</td>
+                    <td>${cinema.location}</td>
+                    <td>
+                        <button type="button" onclick="removeCinema('${cinema.id}', '${cinema.name}')">Remove</button>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+
         <h2>List of movies</h2>
         <form action="/staff/add_movie">
             <button type="submit">Add movie</button>
@@ -67,29 +89,6 @@
                     <td>${movie.actor_names}</td>
                     <td>
                         <button type="button" onclick="removeMovie('${movie.id}', '${movie.title}')">Remove</button>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
-
-        <h2>List of cinemas</h2>
-        <form action="/staff/add_cinema">
-            <button type="submit">Add cinema</button>
-        </form>
-        <table border="1px">
-            <tr>
-                <th>Cinema ID</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Action</th>
-            </tr>
-            <c:forEach var="cinema" items="${requestScope.CINEMAS}">
-                <tr>
-                    <td>${cinema.id}</td>
-                    <td>${cinema.name}</td>
-                    <td>${cinema.location}</td>
-                    <td>
-                        <button type="button" onclick="removeCinema('${cinema.id}', '${cinema.name}')">Remove</button>
                     </td>
                 </tr>
             </c:forEach>

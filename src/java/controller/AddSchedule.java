@@ -6,7 +6,7 @@ import daos.MovieDAO;
 import daos.ScheduleDAO;
 import dtos.ActorDTO;
 import dtos.CinemaDTO;
-import dtos.ListMoviesDTO;
+import dtos.MovieDetailDTO;
 import dtos.ScheduleDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,7 @@ public class AddSchedule extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         MovieDAO movieDAO = new MovieDAO();
-        List<ListMoviesDTO> movies = movieDAO.getAll();
+        List<MovieDetailDTO> movies = movieDAO.getAll();
         if (movies != null) {
             request.setAttribute("MOVIES", movies);
         }

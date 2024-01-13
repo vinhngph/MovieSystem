@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DBConnect {
 
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/BookingSystem?autoReconnect=true&useSSL=false";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/MovieSystem?autoReconnect=true&useSSL=false";
     private static final String USER = "root";
     private static final String PASSWORD = "1111";
 

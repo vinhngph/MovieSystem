@@ -1,7 +1,7 @@
 package controller;
 
 import daos.ActorDAO;
-import dtos.MovieActor;
+import dtos.MovieActorDTO;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +18,7 @@ public class RemoveActor extends HttpServlet {
 
         int actor_id = Integer.parseInt(request.getParameter("actor_id"));
         ActorDAO actorDAO = new ActorDAO();
-        MovieActor actor = actorDAO.getMovie(actor_id);
+        MovieActorDTO actor = actorDAO.getMovie(actor_id);
         if (actor == null) {
             actorDAO.removeActor(actor_id);
             response.sendRedirect("home");

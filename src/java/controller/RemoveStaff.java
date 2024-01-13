@@ -23,7 +23,7 @@ public class RemoveStaff extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e);
         } finally {
-            response.sendRedirect("../admin");
+            response.sendRedirect("home");
         }
     }
 

@@ -1,6 +1,6 @@
 package daos;
 
-import dtos.ListMoviesDTO;
+import dtos.MovieDetailDTO;
 import dtos.MovieDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,8 +16,8 @@ public class MovieDAO {
     private PreparedStatement stm = null;
     private ResultSet rs = null;
 
-    public List<ListMoviesDTO> getAll() {
-        List<ListMoviesDTO> list = new ArrayList<>();
+    public List<MovieDetailDTO> getAll() {
+        List<MovieDetailDTO> list = new ArrayList<>();
         String sql = """
                      SELECT 
                          Movies.id AS movie_id,
@@ -54,7 +54,7 @@ public class MovieDAO {
                     }
                 }
 
-                ListMoviesDTO movie = new ListMoviesDTO(id, title, director, category, age_require, actorNames);
+                MovieDetailDTO movie = new MovieDetailDTO(id, title, director, category, age_require, actorNames);
                 list.add(movie);
             }
             return list;

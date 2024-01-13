@@ -11,6 +11,11 @@
         <form action="../Logout" method="post">
             <button type="submit">Logout</button>
         </form>
+        <br>
+        <form action="history" method="get">
+            <button type="submit">History</button>
+        </form>
+        <br>
 
         <h2>List of movies</h2>
         <form action="home" method="post">

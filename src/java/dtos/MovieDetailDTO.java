@@ -2,7 +2,7 @@ package dtos;
 
 import java.util.List;
 
-public class ListMoviesDTO {
+public class MovieDetailDTO {
 
     private int id;
     private String title;
@@ -11,7 +11,7 @@ public class ListMoviesDTO {
     private int age_require;
     private List<String> actor_names;
 
-    public ListMoviesDTO(int id, String title, String director, String category, int age_require, List<String> actor_names) {
+    public MovieDetailDTO(int id, String title, String director, String category, int age_require, List<String> actor_names) {
         this.id = id;
         this.title = title;
         this.director = director;

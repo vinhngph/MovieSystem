@@ -24,7 +24,7 @@ public class Main extends HttpServlet {
 
             switch (role) {
                 case 1 ->
-                    response.sendRedirect("admin");
+                    response.sendRedirect("/admin/home");
                 case 2 ->
                     response.sendRedirect("/staff/home");
                 case 3 ->

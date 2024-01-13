@@ -8,13 +8,13 @@
     </head>
     <body>
         <h1>Hello admin: ${sessionScope.NAME}!</h1>
-        <form action="Logout" method="post">
+        <form action="../Logout" method="post">
             <button type="submit">Logout</button>
         </form>
         <br>
 
         <h3>All Staffs</h3>
-        <form action="/admin/add_staff" method="get">
+        <form action="add_staff" method="get">
             <button type="submit">Add Staff</button>
         </form>
 

@@ -1,11 +1,11 @@
 package dtos;
 
-public class MovieActor {
+public class MovieActorDTO {
 
     private int movie_id;
     private int actor_id;
 
-    public MovieActor(int movie_id, int actor_id) {
+    public MovieActorDTO(int movie_id, int actor_id) {
         this.movie_id = movie_id;
         this.actor_id = actor_id;
     }

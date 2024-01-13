@@ -1,7 +1,7 @@
 package daos;
 
 import dtos.ActorDTO;
-import dtos.MovieActor;
+import dtos.MovieActorDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,7 +49,7 @@ public class ActorDAO {
         }
     }
 
-    public MovieActor getMovie(int actor_id) {
+    public MovieActorDTO getMovie(int actor_id) {
         String sql = "SELECT * FROM MovieActor WHERE actor_id=?";
         try {
             conn = DBConnect.getConnection();
@@ -57,7 +57,7 @@ public class ActorDAO {
             stm.setInt(1, actor_id);
             rs = stm.executeQuery();
             if (rs.next()) {
-                MovieActor actor = new MovieActor(rs.getInt("movie_id"), rs.getInt("actor_id"));
+                MovieActorDTO actor = new MovieActorDTO(rs.getInt("movie_id"), rs.getInt("actor_id"));
                 return actor;
             }
         } catch (SQLException e) {

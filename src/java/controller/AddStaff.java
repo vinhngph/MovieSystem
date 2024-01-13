@@ -43,20 +43,16 @@ public class AddStaff extends HttpServlet {
                 userDAO.addUser(user);
                 staffDAO.addStaff(staff);
 
-                response.sendRedirect("../admin");
+                response.sendRedirect("home");
             } else {
                 session.setAttribute("ExistedUser", "This username is already in use");
                 response.sendRedirect("add_staff");
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

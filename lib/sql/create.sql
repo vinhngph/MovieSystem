@@ -1,6 +1,6 @@
-CREATE DATABASE BookingSystem;
+CREATE DATABASE MovieSystem;
 
-USE BookingSystem;
+USE MovieSystem;
 
 CREATE TABLE Users (
   username VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -25,9 +25,6 @@ CREATE TABLE Admin (
   name VARCHAR(50) NOT NULL,
   FOREIGN KEY (username) REFERENCES Users(username)
 );
-
-
-
 
 CREATE TABLE Movies (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
