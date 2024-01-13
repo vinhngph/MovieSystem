@@ -18,19 +18,20 @@ public class MovieDAO {
 
     public List<ListMoviesDTO> getAll() {
         List<ListMoviesDTO> list = new ArrayList<>();
-        String sql = "SELECT \n"
-                + "    Movies.id AS movie_id,\n"
-                + "    Movies.title AS movie_title,\n"
-                + "    Movies.director,\n"
-                + "    Movies.category,\n"
-                + "    Movies.age_require,\n"
-                + "    GROUP_CONCAT(Actors.name ORDER BY Actors.name ASC) AS actor_names\n"
-                + "FROM \n"
-                + "    Movies\n"
-                + "LEFT JOIN MovieActor ON Movies.id = MovieActor.movie_id\n"
-                + "LEFT JOIN Actors ON MovieActor.actor_id = Actors.id\n"
-                + "GROUP BY\n"
-                + "    Movies.id, Movies.title, Movies.director, Movies.category, Movies.age_require;";
+        String sql = """
+                     SELECT 
+                         Movies.id AS movie_id,
+                         Movies.title AS movie_title,
+                         Movies.director,
+                         Movies.category,
+                         Movies.age_require,
+                         GROUP_CONCAT(Actors.name ORDER BY Actors.name ASC) AS actor_names
+                     FROM 
+                         Movies
+                     LEFT JOIN MovieActor ON Movies.id = MovieActor.movie_id
+                     LEFT JOIN Actors ON MovieActor.actor_id = Actors.id
+                     GROUP BY
+                         Movies.id, Movies.title, Movies.director, Movies.category, Movies.age_require;""";
 
         try {
             conn = DBConnect.getConnection();

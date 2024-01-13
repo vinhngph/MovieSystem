@@ -47,3 +47,31 @@ CREATE TABLE MovieActor (
   FOREIGN KEY (movie_id) REFERENCES Movies(id),
   FOREIGN KEY (actor_id) REFERENCES Actors(id)
 );
+
+
+CREATE TABLE Cinemas (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL
+) AUTO_INCREMENT = 300;
+
+
+CREATE TABLE Schedule (
+	id INT AUTO_INCREMENT NOT NULL,
+    movie_id INT,
+    cinema_id INT,
+    date DATE NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY (id, movie_id, cinema_id),
+    FOREIGN KEY (movie_id) REFERENCES Movies(id),
+    FOREIGN KEY (cinema_id) REFERENCES Cinemas(id)
+) AUTO_INCREMENT = 400;
+
+CREATE TABLE Billing (
+	schedule_id INT,
+    username VARCHAR(255),
+    amount INT NOT NULL,
+    price INT NOT NULL,
+    FOREIGN KEY (schedule_id) REFERENCES Schedule(id),
+    FOREIGN KEY (username) REFERENCES Users(username)
+);

@@ -56,6 +56,26 @@
         <servlet-name>RemoveMovie</servlet-name>
         <servlet-class>controller.RemoveMovie</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCinema</servlet-name>
+        <servlet-class>controller.AddCinema</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveCinema</servlet-name>
+        <servlet-class>controller.RemoveCinema</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddSchedule</servlet-name>
+        <servlet-class>controller.AddSchedule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveSchedule</servlet-name>
+        <servlet-class>controller.RemoveSchedule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Billing</servlet-name>
+        <servlet-class>controller.Billing</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Main</servlet-name>
         <url-pattern>/Main</url-pattern>
@@ -111,5 +131,25 @@
     <servlet-mapping>
         <servlet-name>RemoveMovie</servlet-name>
         <url-pattern>/staff/remove_movie</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCinema</servlet-name>
+        <url-pattern>/staff/add_cinema</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveCinema</servlet-name>
+        <url-pattern>/staff/remove_cinema</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddSchedule</servlet-name>
+        <url-pattern>/staff/add_schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveSchedule</servlet-name>
+        <url-pattern>/staff/remove_schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Billing</servlet-name>
+        <url-pattern>/customer/billing</url-pattern>
     </servlet-mapping>
 </web-app>
