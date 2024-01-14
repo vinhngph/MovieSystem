@@ -35,7 +35,6 @@ public class Main extends HttpServlet {
         } else {
             response.sendRedirect("login");
         }
-
     }
 
     /**

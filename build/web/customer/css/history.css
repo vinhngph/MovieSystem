@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px 100px;
+}
+
+.auth-form__header {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #333;
+    position: relative;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 3px solid #dbdbdb;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4c78af;
+    color: white;
+}
+
+.auth-form__back {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    padding: 8px 12px;
+    background-color: indianred;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: crimson;
+}

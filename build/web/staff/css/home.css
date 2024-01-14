@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px 100px;
+}
+
+.auth-form__header {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #333;
+    position: relative;
+    text-align: center;
+}
+
+.auth-form__logout {
+    display: flex;
+    justify-content: center;
+}
+
+button.auth-form__logout {
+    padding: 8px 12px;
+    background-color: indianred;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.auth-form__logout:hover {
+    background-color: crimson;
+}
+
+.auth-form__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+
+button.auth-form__title {
+    padding: 8px 12px;
+    background-color: #4c78af;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.auth-form__title:hover {
+    background-color: rgb(100, 149, 212);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 3px solid #dbdbdb;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #4c78af;
+    color: white;
+}
+
+button {
+    padding: 4px 10px;
+    background-color: indianred;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: crimson;
+}

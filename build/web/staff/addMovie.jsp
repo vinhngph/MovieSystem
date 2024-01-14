@@ -5,29 +5,45 @@
     <head>
         <meta charset="UTF-8">
         <title>Add Movie</title>
+        <link rel="stylesheet" href="css/addMovie.css">
     </head>
     <body>
-        <h2>Add Movie</h2>
-        <form action="/staff/add_movie" method="post">
-            <label>Title:</label>
-            <input type="text" name="title" required><br>
-
-            <label>Director:</label>
-            <input type="text" name="director" required><br>
-
-            <label>Category:</label>
-            <input type="text" name="category" required><br>
-
-            <label>Age Requirement:</label>
-            <input type="number" name="ageRequire" required><br>
-
-            <label>Actors:</label>
-            <select multiple="multiple" name="actors" size="5" required>
-                <c:forEach var="actor" items="${requestScope.ACTORS}">
-                    <option value="${actor.id}">${actor.name}</option>
-                </c:forEach>
-            </select><br>
-            <input type="submit" value="Add Movie">
-        </form>
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <div class="auth-form">
+                    <h1>Add Movie</h1>
+                    <form action="/staff/add_movie" method="post">
+                        <div class="auth-form__input">
+                            <label >Title:</label>
+                            <input type="text" name="title" required>
+                        </div>
+                        <div class="auth-form__input">
+                            <label>Director:</label>
+                            <input type="text" name="director" required>
+                        </div>
+                        <div class="auth-form__input">
+                            <label>Category:</label>
+                            <input type="text" name="category" required>
+                        </div>
+                        <div class="auth-form__input">
+                            <label>Age Require:</label>
+                            <input type="number" name="ageRequire" required>
+                        </div>
+                        <div class="auth-form__input">
+                            <label>Actors:</label>
+                            <select multiple="multiple" name="actors" required>
+                                <c:forEach var="actor" items="${requestScope.ACTORS}">
+                                    <option value="${actor.id}">${actor.name}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="auth-form__submit">
+                            <button class="auth-form__submit" type="submit">Add Movie</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
