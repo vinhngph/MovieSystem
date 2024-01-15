@@ -6,6 +6,7 @@ CREATE TABLE Users (
   username VARCHAR(50) PRIMARY KEY NOT NULL,
   password VARCHAR(255) NOT NULL
 );
+
 CREATE TABLE Staffs (
   username VARCHAR(50) PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -13,6 +14,7 @@ CREATE TABLE Staffs (
   salary INT NOT NULL,
   FOREIGN KEY (username) REFERENCES Users(username)
 );
+
 CREATE TABLE Customers (
   username VARCHAR(50) PRIMARY KEY NOT NULL,
   name VARCHAR(50) NOT NULL,
@@ -20,6 +22,7 @@ CREATE TABLE Customers (
   age INT NOT NULL,
   FOREIGN KEY (username) REFERENCES Users(username)
 );
+
 CREATE TABLE Admin (
   username VARCHAR(50) PRIMARY KEY NOT NULL,
   name VARCHAR(50) NOT NULL,
@@ -33,10 +36,12 @@ CREATE TABLE Movies (
   category VARCHAR(255) NOT NULL,
   age_require INT NOT NULL
 ) AUTO_INCREMENT = 100;
+
 CREATE TABLE Actors (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL
 ) AUTO_INCREMENT = 200;
+
 CREATE TABLE MovieActor (
   movie_id INT,
   actor_id INT,
@@ -45,21 +50,18 @@ CREATE TABLE MovieActor (
   FOREIGN KEY (actor_id) REFERENCES Actors(id)
 );
 
-
 CREATE TABLE Cinemas (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   location VARCHAR(255) NOT NULL
 ) AUTO_INCREMENT = 300;
 
-
 CREATE TABLE Schedule (
-	id INT AUTO_INCREMENT NOT NULL,
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     movie_id INT,
     cinema_id INT,
     date DATE NOT NULL,
     quantity INT NOT NULL,
-    PRIMARY KEY (id, movie_id, cinema_id),
     FOREIGN KEY (movie_id) REFERENCES Movies(id),
     FOREIGN KEY (cinema_id) REFERENCES Cinemas(id)
 ) AUTO_INCREMENT = 400;
@@ -69,6 +71,7 @@ CREATE TABLE Billing (
     username VARCHAR(255),
     amount INT NOT NULL,
     price INT NOT NULL,
+    PRIMARY KEY (schedule_id, username),
     FOREIGN KEY (schedule_id) REFERENCES Schedule(id),
     FOREIGN KEY (username) REFERENCES Users(username)
 );

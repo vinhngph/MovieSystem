@@ -8,10 +8,17 @@ import java.sql.SQLException;
 
 public class DBConnect {
 
-    private static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=MovieSystem;encrypt=false";
-    private static final String USER = "sa";
-    private static final String PASSWORD = "huy1234";
+// //    SQL Server
+//    private static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;databaseName=MovieSystem;encrypt=false";
+//    private static final String USER = "sa";
+//    private static final String PASSWORD = "password";
+
+//    MySQL
+    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/MovieSystem?autoReconnect=true&useSSL=false";
+    private static final String USER = "root";
+    private static final String PASSWORD = "1111";
 
     static {
         try {
