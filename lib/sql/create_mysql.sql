@@ -68,7 +68,7 @@ CREATE TABLE Schedule (
 
 CREATE TABLE Billing (
 	schedule_id INT,
-    username VARCHAR(255),
+    username VARCHAR(50),
     amount INT NOT NULL,
     price INT NOT NULL,
     PRIMARY KEY (schedule_id, username),

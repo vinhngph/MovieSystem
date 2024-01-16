@@ -25,5 +25,5 @@
 - Jakarta Standard Tag Library.
 
 ### Setup project
-- Create database by using [`create.sql`](./lib/sql/create.sql) or [`create_sqlsv_version.sql`](./lib/sql/create_sqlsv_version.sql) sql file.
+- Create database by using [`create_mysql.sql`](./lib/sql/create_mysql.sql) or [`create_sqlserver.sql`](./lib/sql/create_sqlserver.sql) sql file.
 - Insert sample data by using [`insert.sql`](./lib/sql/insert.sql) sql file.
