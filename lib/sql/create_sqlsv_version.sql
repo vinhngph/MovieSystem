@@ -19,7 +19,7 @@ CREATE TABLE Admin (
   FOREIGN KEY (username) REFERENCES Users(username)
 );
 
-CREATE TABLE Staff(
+CREATE TABLE Staff(s
 	username VARCHAR(50) PRIMARY KEY NOT NULL,
 	name VARCHAR(50) NOT NULL,
 	department VARCHAR(255) NOT NULL,
