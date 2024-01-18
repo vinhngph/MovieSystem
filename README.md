@@ -10,6 +10,9 @@
 - Store booking history.
 - Modify booking system.
 
+## Library
+- All library we use for this project you can find in `lib` folder.
+
 ## ERD
 - [`ERD`](./lib/ERD/ERD/MovieSystem.erdplus)
 - [`SCHEMA`](./lib/ERD/ERDSchema/MovieSysyemSchema.erdplus)
@@ -25,5 +28,6 @@
 - Jakarta Standard Tag Library.
 
 ### Setup project
-- Create database by using [`create_mysql.sql`](./lib/sql/create_mysql.sql) or [`create_sqlserver.sql`](./lib/sql/create_sqlserver.sql) sql file.
-- Insert sample data by using [`insert.sql`](./lib/sql/insert.sql) sql file.
+- Create database by using [`create_mysql.sql`](./lib/sql/create_mysql.sql) or [`create_sqlserver.sql`](./lib/sql/create_sqlserver.sql).
+- Insert sample data by using [`insert.sql`](./lib/sql/insert.sql).
+- Or using [`Generate "Customer" and "Password"`](./lib/GenerateData/app.py)

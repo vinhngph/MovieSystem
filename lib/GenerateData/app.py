@@ -32,4 +32,9 @@ def generate_password(username):
     return password
 
 
+#print the results
+random_customer = generate_random_customer()
+print("Random Customer:", random_customer)
 
+random_password = generate_password(random_customer["username"])
+print("Random Password:", random_password)
