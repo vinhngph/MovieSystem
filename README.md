@@ -30,4 +30,4 @@
 ### Setup project
 - Create database by using [`create_mysql.sql`](./lib/sql/create_mysql.sql) or [`create_sqlserver.sql`](./lib/sql/create_sqlserver.sql).
 - Insert sample data by using [`insert.sql`](./lib/sql/insert.sql).
-- Or using [`Generate "Customer" and "Password"`](./lib/GenerateData/app.py)
+- Or using [`Generate "Customer" and "Password"`](./lib/GenerateData/app.py).
